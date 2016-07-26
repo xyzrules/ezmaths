@@ -14,7 +14,7 @@ var list = ["sin","cos","tan","cot","log","ln"];
 
 function input_parser(str){
 	stack = [];
-	queue = []
+	queue = [];
 
 	for (var i=0; i<str.length;i++){
 		if (str[i]!=" ") {
@@ -114,8 +114,17 @@ function to_tree(array){
 			}
 			input_tree.add(new node(array[i-1], current_node));
 		if(is_operator(array[i-1]) != 0){
-			current_node = input_tree.array_data.length -1
+			current_node = input_tree.array_data.length -1;
+			if(array[i-1]  === 'sin' 
+				|| array[i-1]  === 'cos' 
+				|| array[i-1]  === 'tan' 
+				|| array[i-1]  === 'log' 
+				|| array[i-1]  === 'ln' ){
+				input_tree.add(new node(0, current_node));
+			}
+			
 		}
 	}
 	input_tree.print_data();
 }
+
