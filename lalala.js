@@ -52,6 +52,7 @@ function input_parser(str){
 					//other operator such as sin, cos, tan, cot, log, ln
 					if (str[i]==="l" && str[i+1]==="n"){
 						stack.push("ln");
+						i=i+1;
 					}
 					else {
 						stack.push(str.substring(i,i+3));
