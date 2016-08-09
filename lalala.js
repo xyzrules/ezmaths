@@ -16,7 +16,7 @@ function input_parser(str){
 	stack = [];
 	queue = [];
 
-	for (var i=0; i<str.length;i++){
+	for (var i=0; i<str.length; i++){
 		if (str[i]!=" ") {
 			if ( isNaN (Number(str[i]) ) === false ){
 				if (num==="x")	num=0;
@@ -63,7 +63,7 @@ function input_parser(str){
 
 		}
 	}
-
+	check_num();
 
 	while (stack.length!=0){
 		queue.push(stack.pop());
