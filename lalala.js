@@ -17,7 +17,7 @@ function input_parser(str){
 	queue = [];
 
 	for (var i=0; i<str.length; i++){
-		if (str[i]!=" ") {
+		if (str[i]!==" " && str[i]!==",") {
 			if ( isNaN (Number(str[i]) ) === false ){
 				if (num==="x")	num=0;
 				num=num*10+Number(str[i]);
@@ -60,7 +60,9 @@ function input_parser(str){
 					}
 				}
 			}
-
+		}
+		else {
+			check_num();
 		}
 	}
 	check_num();
@@ -119,7 +121,6 @@ function to_tree(array){
 			if(array[i-1]  === 'sin' 
 				|| array[i-1]  === 'cos' 
 				|| array[i-1]  === 'tan' 
-				|| array[i-1]  === 'log' 
 				|| array[i-1]  === 'ln' ){
 				input_tree.add(new node(0, current_node));
 			}
